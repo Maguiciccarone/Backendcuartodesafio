@@ -5,6 +5,9 @@ class ProductManager {
     constructor() {
         this.path = './products.json';
         this.nextId = 1;
+        if (!fs.existsSync(this.path)) {
+            fs.writeFileSync(this.path, '[]', 'utf-8');
+        }
     }
 
     async addProduct(product) {
@@ -108,4 +111,4 @@ const test = async () => {
     await productManager.deleteProduct(2);
 };
 
-test(); 
+test();
