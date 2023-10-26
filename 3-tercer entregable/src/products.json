@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "cuaderno liso",
+    "price": 4000,
+    "stock": 20,
+    "páginas": 50
+  },
+  {
+    "id": 2,
+    "name": "cuaderno rayado",
+    "price": 4000,
+    "stock": 20,
+    "páginas": 50
+  },
+  {
+    "id": 3,
+    "name": "cuaderno cuadriculado",
+    "price": 4000,
+    "stock": 20,
+    "páginas": 50
+  },
+  {
+    "id": 4,
+    "name": "cuaderno emprendedor ",
+    "price": 4000,
+    "stock": 20,
+    "páginas": 50
+  },
+  {
+    "id": 5,
+    "name": "cuaderno de recetas",
+    "price": 4000,
+    "stock": 20,
+    "páginas": 50
+  },
+  {
+    "id": 6,
+    "name": "cuaderno pediátrico",
+    "price": 4000,
+    "stock": 20,
+    "páginas": 50
+  },
+  {
+    "id": 7,
+    "name": "cuaderno A4",
+    "price": 4000,
+    "stock": 20,
+    "páginas": 50
+  },
+  {
+    "id": 8,
+    "name": "cuaderno oficio",
+    "price": 4000,
+    "stock": 20,
+    "páginas": 50
+  },
+  {
+    "id": 9,
+    "name": "cuaderno pocket",
+    "price": 4000,
+    "stock": 20,
+    "páginas": 50
+  },
+  {
+    "id": 10,
+    "name": "cuaderno mixto",
+    "price": 4000,
+    "stock": 20,
+    "páginas": 50
+  }
+]
