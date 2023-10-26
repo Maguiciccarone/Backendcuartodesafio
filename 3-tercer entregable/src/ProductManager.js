@@ -4,12 +4,19 @@ export class ProductManager {
 
     constructor() {
         this.path = './products.json';
-        this.products = [];
+        this.products = [{
+            "id": 2,
+            "name": "cuaderno rayado",
+            "price": 4000,
+            "stock": 20,
+            "páginas": 50
+        }];
         this.loadProducts();
     }
 
     loadProducts() {
         if (fs.existsSync(this.path)) {
+            console.log(loadProducts);
             const productsJSON = fs.readFileSync(this.path, 'utf-8');
             this.products = JSON.parse(productsJSON);
             if (this.products.length > 0) {
