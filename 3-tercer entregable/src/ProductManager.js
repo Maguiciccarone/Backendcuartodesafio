@@ -4,13 +4,7 @@ export class ProductManager {
 
     constructor() {
         this.path = './products.json';
-        this.products = [{
-            "id": 2,
-            "name": "cuaderno rayado",
-            "price": 4000,
-            "stock": 20,
-            "páginas": 50
-        }];
+        this.products = [];
         this.loadProducts();
     }
 
