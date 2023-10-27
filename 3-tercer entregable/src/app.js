@@ -3,7 +3,7 @@ import { ProductManager } from './ProductManager.js';
 const productManager = new ProductManager('./products.json');
 
 const app = express();
-const PORT = 8088;
+const PORT = 8080;
 
 app.get('/products', async (req, res) => {
     const { limit } = req.query;
@@ -19,15 +19,15 @@ app.get('/products', async (req, res) => {
     }
 });
 
-app.get('/products/:pid', async (req, res) => {
+app.get('/products/:id', async (req, res) => {
 
-    const { pid } = req.params;
     try {
-        const product = await productManager.getProductById(pid);
-
-        res.json(product);
+        const { id } = req.params;
+        const product = await productManager.getProductById(Number(id));
+        if (!product) res.status(404).json({ message: 'Product not found' });
+        else res.status(200).json(product);
     } catch (error) {
-        res.status(404).json({ error: error.message });
+        res.status(500).json({ error: error.message });
     }
 });
 
