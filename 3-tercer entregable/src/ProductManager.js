@@ -4,36 +4,24 @@ export class ProductManager {
 
     constructor() {
         this.path = './products.json';
-        this.products = [];
-        this.loadProducts();
-    }
-
-    loadProducts() {
-        if (fs.existsSync(this.path)) {
-            console.log(loadProducts);
-            const productsJSON = fs.readFileSync(this.path, 'utf-8');
-            this.products = JSON.parse(productsJSON);
-            if (this.products.length > 0) {
-                this.nextId = Math.max(...this.products.map(product => product.id)) + 1;
-            } else {
-                this.nextId = 1;
-            }
-        } else {
-            this.nextId = 1;
+        this.nextId = 1;
+        if (!fs.existsSync(this.path)) {
+            fs.writeFileSync(this.path, '[]', 'utf-8');
         }
     }
 
     async addProduct(product) {
+
         try {
             product.id = this.nextId;
             this.nextId++;
-            this.products.push(product);
-            await fs.promises.writeFile(this.path, JSON.stringify(this.products));
-            return product;
+            const products = await this.getProducts();
+            products.push(product);
+            await fs.promises.writeFile(this.path, JSON.stringify(products));
         } catch (error) {
             console.log(error);
         }
-    }
+    };
 
     async updateProduct(id, updatedProductData) {
         try {
@@ -78,6 +66,7 @@ export class ProductManager {
             console.log(error);
         }
     }
+
 
     async getProductById(idProduct) {
         try {

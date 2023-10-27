@@ -3,17 +3,14 @@ import { ProductManager } from './ProductManager.js';
 const productManager = new ProductManager('./products.json');
 
 const app = express();
-const PORT = 8080;
-
-app.use(express.json());
+const PORT = 8088;
 
 app.get('/products', async (req, res) => {
+    const { limit } = req.query;
     try {
-        const limit = parseInt(req.query.limit) || 0;
         const products = await productManager.getProducts();
-        if (limit > 0) {
-            const limitProd = products.slice(0, limit);
-            res.status(200).send(limitProd);
+        if (limit) {
+            res.json(products.slice(0, parseInt(limit)));
         } else {
             res.json(products);
         }
