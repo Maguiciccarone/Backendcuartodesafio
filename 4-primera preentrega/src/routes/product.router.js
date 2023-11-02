@@ -2,7 +2,7 @@ import { Router } from "express";
 const router = Router();
 
 import { ProductManager } from "../managers/product.manager.js";
-import { productValidator } from "../middlewares/productValidator.js";
+import { productValidator } from "../middlewares/ productValidator.js";
 const productManager = new ProductManager("./src/data/products.json");
 
 router.get("/", async (req, res) => {
