@@ -6,33 +6,41 @@ const cartManager = new CartManager('./src/data/cart.json');
 
 
 router.post('/', async (req, res) => {
-    // crear carrito
     try {
-        const cartCreated = await cartManager.createCart(req.body);
+        const cartCreated = await cartManager.createCart();
         res.status(200).json(cartCreated);
     } catch (error) {
-        res.status(500).json(error.message);
+        res.status(500).json({ error: error.message });
     }
 });
 
-router.get('/:cid ', async (req, res) => {
-
+router.get('/:cid', async (req, res) => {
     try {
         const { cid } = req.params;
         const cart = await cartManager.getCartById(Number(cid));
-        if (!cart) res.status(404).json({ message: "cart not found" });
+        if (!cart) res.status(404).json({ message: "Cart not found" });
         else res.status(200).json(cart);
     } catch (error) {
-        res.status(500).json(error.message);
+        res.status(500).json({ error: error.message });
     }
 });
 
-router.post('/:idCart/product/:idProduct ', async (req, res) => {
-    const { idProduct } = req.params;
-    const { idCart } = req.params;
-    // llamar metodo que busca cart por id
-    // llamar metodo que busca product por id
-    await cartManager.saveProductToCart(idProduct, idCart);
+
+router.post('/:idCart/product/:idProduct', async (req, res) => {
+    const { idProduct, idCart } = req.params;
+    try {
+
+        const product = await cartManager.getProductById(Number(idProduct));
+        if (!product) {
+            res.status(404).json({ message: "Product not found" });
+        } else {
+
+            const updatedCart = await cartManager.saveProductToCart(Number(idCart), product);
+            res.status(200).json(updatedCart);
+        }
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 });
 
 export default router;
