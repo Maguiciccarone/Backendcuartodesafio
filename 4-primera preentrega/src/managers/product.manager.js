@@ -5,6 +5,23 @@ export class ProductManager {
         this.path = path;
     }
 
+
+    async createProduct(obj) {
+        try {
+            const product = {
+                id: (await this.#getMaxId()) + 1,
+                status: true,
+                ...obj,
+            };
+            const products = await this.getProducts();
+            products.push(product);
+            await fs.promises.writeFile(this.path, JSON.stringify(products));
+            return product;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     async getProducts() {
         try {
             if (fs.existsSync(this.path)) {
@@ -33,22 +50,6 @@ export class ProductManager {
             if (prod.id > maxId) maxId = prod.id;
         });
         return maxId;
-    }
-
-    async createProduct(obj) {
-        try {
-            const product = {
-                id: (await this.#getMaxId()) + 1,
-                status: true,
-                ...obj,
-            };
-            const products = await this.getProducts();
-            products.push(product);
-            await fs.promises.writeFile(this.path, JSON.stringify(products));
-            return product;
-        } catch (error) {
-            console.log(error);
-        }
     }
 
     async getProductById(id) {

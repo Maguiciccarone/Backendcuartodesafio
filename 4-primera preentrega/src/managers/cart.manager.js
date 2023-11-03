@@ -56,7 +56,7 @@ export class CartManager {
         const cartExists = await this.getCartById(idCart);
 
         if (cartExists) {
-            const existProdInCart = cartExists.products.find(p => p.product === idProd);
+            const existProdInCart = cartExists.products.find(p => p.product === Number(idProd));
             if (existProdInCart) existProdInCart.quantity += 1;
             else {
                 const prod = {
