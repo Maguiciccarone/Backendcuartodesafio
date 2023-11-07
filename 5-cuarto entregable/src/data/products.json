@@ -1,0 +1,131 @@
+[
+  {
+    "id": 1,
+    "status": true,
+    "title": "Lobo, faro y pájaro",
+    "description": "Está excursión comienza en el puerto de Ushuaia. Emprendiendo nuestra navegación a bordo del catamarán/yate haciendo diferentes paradas a lo largo del camino. En cada islote, el capitán se detendrá para que puedan observar las diversas especies de aves marinas y lobos marinos, donde podrán tomar fotografías en su habitad natural. Luego de ver los animales, nos dirigiremos al Faro Les Eclaireurs, más conocido como el famoso Faro del Fin del Mundo. Para finalizar está excursión, volveremos nuevamente al puerto de Ushuaia, donde los pasajeros podrán disfrutar de la cafetería a bordo y contemplar la información que nos brindan los guías.",
+    "code": "ab123",
+    "price": 15000,
+    "stock": 20,
+    "category": "navegación"
+  },
+  {
+    "id": 2,
+    "status": true,
+    "title": "Pingüinera + Navegación",
+    "description": "Está excursión imperdible comienza en el muelle comercial de Ushuaia, para luego embarcarnos al catamarán donde navegaremos durando dos horas y media en el Canal Beagle. Lobos marinos, cormoranes son solo el comienzo de esta gran aventura. Podremos contemplar el famoso faro del fin del mundo, el Faro Les Eclaireurs. Continuando con la navegación, llegaremos a la Estancia Harberton, la primera estancia de Tierra del Fuego y donde el grupo se dividirá en dos. Mientras un grupo visita la Isla Martillo donde se encuentran los pingüinos, el otro grupo podrá visitar el Museo Acatushun o almorzar y luego viceversa.",
+    "code": "ab124",
+    "price": 15000,
+    "stock": 20,
+    "category": "navegación"
+  },
+  {
+    "id": 3,
+    "status": true,
+    "title": "Pingüinera",
+    "description": "El punto de encuentro comienza en el Muelle Turístico de Ushuaia para luego tomar la Ruta Nacional N°3. En el camino, pasaremos por los centros invernales, cruzaremos la Cordillera de los Andes y hermosos paisajes que sorprenden a cada curva. Una de nuestras primeras paradas será en el típico Arboles Banderas. Estos árboles se encuentran inclinados debido a los fuertes vientos de la Patagonia. Continuando con nuestro camino llegaremos a la primera estancia de Tierra del Fuego, la Estancia Harberton. Allí, podremos visitar el Museo Acatushun de Aves y Mamíferos Marinos Australes para luego embarcarnos en un semirrígido que nos llevara hacia la Isla Martillo donde podremos visitar a los pingüinos (Papua y Magallánico), diferentes aves como skuas, petreles, cormoranes en su habitad natural. Para finalizar está excursión, emprenderemos el camino de regreso a la ciudad de Ushuaia, con la alegría de haber vivido está experiencia única que pocos pueden hacerla.",
+    "code": "ab125",
+    "price": 15000,
+    "stock": 20,
+    "category": "navegación"
+  },
+  {
+    "id": 4,
+    "status": true,
+    "title": "Cruce a PW",
+    "description": "Este viaje consta de dos tramos. El primer tramo comienza en el puerto de Ushuaia, a bordo de un semirrígido el cual cruzara el famoso Canal Beagle uno 30 minutos hasta llegar a Puerto Navarino. El segundo tramo será vía terrestre, donde nos estará esperando un mini bus que irá bordeando la costa chilena, atravesando paisajes únicos y sitios históricos hasta acceder a Puerto Williams (conocido por ser ahora la ciudad más austral del mundo).",
+    "code": "ab126",
+    "price": 15000,
+    "stock": 20
+  },
+  {
+    "id": 5,
+    "status": true,
+    "title": "Vinciguerra",
+    "description": "Una vez que el guía los recoge en el lugar donde están alojados, iniciaremos el sendero en la base de la montaña ubicado en el valle de Andorra. Turbales, bosques repletos de flora y fauna, ríos de deshielo es solo el comienzo de esta gran aventura. Una vez que llegamos a mitad de camino, pasaremos el límite de vegetación para luego encontrarnos con la imponente Laguna de los Témpanos y el Glaciar Vinciguerra, donde podremos recargar energías con un rico almuerzo.",
+    "code": "ab127",
+    "price": 15000,
+    "stock": 20,
+    "category": "trekking"
+  },
+  {
+    "id": 6,
+    "status": true,
+    "title": "Laguna Esmeralda",
+    "description": "Uno de los tesoros de nuestra ciudad es Laguna Esmeralda. Este trekking es apto para todo público. La excursión comienza en el momento que el guía los recoge en el lugar donde están alojados, emprendiendo nuestro viaje por la Ruta Nacional N°3 hasta el comienzo del sendero. Bosques, diques de castores, turbales, ríos, montañas son solo el comienzo de este gran trekking de tan solo 10 km para luego encontrarnos con una gran laguna y su color único que le dá el nombre.",
+    "code": "ab128",
+    "price": 15000,
+    "stock": 20,
+    "category": "trekking"
+  },
+  {
+    "id": 7,
+    "status": true,
+    "title": "Glaciar Martial",
+    "description": "Uno de los glaciares más importante de nuestra ciudad. Está excursión incluye traslado, emprendiendo nuestro viaje hasta la base del glaciar, donde empezaremos a ascender alrededor de unos 800 msnm hasta obtener una vista panorámica de toda la ciudad de Ushuaia, el Canal Beagle y la Isla Navarino que se encuentra en el país vecino Chile.",
+    "code": "ab129",
+    "price": 15000,
+    "stock": 20,
+    "category": "trekking"
+  },
+  {
+    "id": 8,
+    "status": true,
+    "title": "Parque Nacional",
+    "description": "Esta aventura comienza desde el lugar donde están alojados, dirigiéndonos por la Ruta Nacional N°3, en dirección sudoeste, camino al Parque Nacional de Tierra del Fuego. Acompañados de un gran paisaje de lengas y guindos, y con guías bien experimentados informándonos sobre la historia y geografía del lugar. Una de nuestras primeras paradas será en el Centro Hípico, donde podremos obtener una hermosa vista de la península de Ushuaia y el Canal Beagle. Continuando con nuestro recorrido, llegaremos a la estación Ferrocarril Austral Fueguino (este viaje es opcional). Aquellos pasajeros que quieran viajar en el famoso Tren del Fin del Mundo podrán hacerlo o bien seguir con la excursión vía terrestre. Nuestra siguiente parada será en el Lago Acigami, es un lago de origen glaciario, donde podremos apreciar las aves autóctonas del lugar. Nuestra última parada será en la Bahía Lapataia, además de la costa marina también nos encontraremos con los restos del antiguo pueblo aborigen que habitaba la región, y es en esta misma bahía donde finaliza la Ruta Nacional°3. Esta excursión es de aproximadamente 4 hs.",
+    "code": "ab120",
+    "price": 15000,
+    "stock": 20,
+    "category": "trekking"
+  },
+  {
+    "id": 9,
+    "status": true,
+    "title": "Tren del Fin del Mundo",
+    "description": "Este famoso Tren del Fin del Mundo nos invita a recorrer 7km del antiguo tren de los presos, el cual partía desde el presidio a la ladera del Monte Susana para obtener diferentes materiales para la construcción. A bordo del tren podremos contemplar grandes vistas de los paisajes el cual es inaccesible del Parque Nacional y, por otro lado, estaremos viajando en viejos ferrocarriles el cual cuenta con locomotoras a vapor y grandes ventanales, y así obtener una experiencia increíble de la historia del fin del mundo.",
+    "code": "ab121",
+    "price": 15000,
+    "stock": 20,
+    "category": "Nuestros tours"
+  },
+  {
+    "id": 10,
+    "status": true,
+    "title": "Lago convencional",
+    "description": "Este gran tour comienza con traslado desde cualquier punto de la ciudad, dirigiéndonos por la Ruta Nacional N°3 en dirección noreste. Monte Olivia, Cinco Hermano y el Valle Carbajal son solo el comienzo de este camino que sorprende a cada curva. Una de nuestras primeras paradas será en el centro invernal donde podremos observar los famosos perros de trineos (Huskies Siberianos y Alaskanos). Continuando con nuestro camino podremos observar valles de turba, cascadas y paisajes modificados por el accionar de los castores. Una vez que llegamos al Paso Garibaldi, nos detendremos para contemplar la hermosa vista panorámica del Lago Escondido y Fagnano. Para finalizar está excursión, volveremos de regreso hacia los centros invernales para poder almorzar y disfrutar de las actividades de nieve y luego regresaremos a la ciudad.",
+    "code": "ab122",
+    "price": 15000,
+    "stock": 20,
+    "category": "Nuestros tours"
+  },
+  {
+    "id": 11,
+    "status": true,
+    "title": "Sunset Kayak",
+    "description": "La excursión incluye traslado, comenzando nuestro viaje por la Ruta Nacional N°3 haciendo diferentes paradas a lo largo del camino hasta llegar al famoso Paso Garibaldi, el punto más alto que cruza la Cordillera de los Andes y el cual se puede observar dos lagos (Escondido y Fagnano). Una vez que descendemos el cordón montañoso de la Cordillera el guía comenzara a darnos instrucciones sobre el kayak para luego comenzar esta travesía. Al llegar a nuestro refugio, que se encuentra del otro lado del lago, recargaremos energías con un fogón, historias, anécdotas y una gran cena al disco. Para finalizar está excursión, volveremos remando con un cielo totalmente estrellado. No se necesita experiencia previa, nuestros kayaks cuentan con estabilizadores que le dan mayor seguridad.",
+    "code": "ab130",
+    "price": 15000,
+    "stock": 20,
+    "category": "Nuestros tours"
+  },
+  {
+    "id": 12,
+    "status": true,
+    "title": "Lagos 4x4 + Kayak",
+    "description": "La excursión cuenta con el traslado desde cualquier punto de la ciudad, hacia la Ruta Nacional N°3, luego de unos kilómetros, un poco de historia y una increíble vista de los valles glaciarios nos detenemos en el Paso Garibaldi, punto panorámico, donde podemos apreciar la vista de los principales lagos de Tierra del Fuego. Descendemos la Cordillera de los Andes hasta la costa del Lago Escondido para comenzar con la travesía en nuestros kayaks, La aventura continúa con un circuito Off Road hasta la imponente costa del Lago Fagnano donde disfrutamos de la naturaleza fueguina, tiempo libre para caminar un rico almuerzo.",
+    "code": "ab131",
+    "price": 15000,
+    "stock": 20,
+    "category": "Nuestros tours"
+  },
+  {
+    "id": 13,
+    "status": true,
+    "title": "Lagos 4x4",
+    "description": "¡Te invitamos a vivir un día fueguino, una aventura llena de adrenalina y anécdotas! Nuestro viaje comienza desde cualquier punto de la ciudad donde te encuentres, en dirección norte por la Ruta Nacional N°3, realizamos distintas paradas a lo largo del camino incluyendo el Paso Garibaldi, punto estratégico para apreciar las vistas del Lago Escondido y Fagnano. Después comenzamos la aventura off road, atravesando bosques de lenga, hasta llegar a la imponente costa del Lago Fagnano, donde tendrán un tiempo libre para caminar y contemplar el extraordinario paisaje de la Cordillera de los Andes. ¡Para finalizar nuestros guías los agasajan con un increíble Almuerzo!",
+    "code": "ab132",
+    "price": 15000,
+    "stock": 20,
+    "category": "Nuestros tours"
+  }
+]
