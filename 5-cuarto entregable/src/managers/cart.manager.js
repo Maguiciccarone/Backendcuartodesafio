@@ -71,7 +71,7 @@ export class CartManager {
                     cart.products[existingProductIndex].quantity += 1;
                 } else {
                     const newProduct = {
-                        product: idProd,
+                        product: Number(idProd),
                         quantity: 1,
                     };
                     cart.products.push(newProduct);

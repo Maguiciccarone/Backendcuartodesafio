@@ -4,7 +4,7 @@ const router = Router();
 import { CartManager } from "../managers/cart.manager.js";
 import { ProductManager } from "../managers/product.manager.js";
 const cartManager = new CartManager("./src/data/cart.json");
-const productManager = new ProductManager("./src/data/cart.json");
+const productManager = new ProductManager("./src/data/products.json");
 
 router.post('/', async (req, res) => {
     try {
@@ -28,7 +28,7 @@ router.get('/:cid', async (req, res) => {
 
 router.post('/:idCart/product/:idProd', async (req, res) => {
     try {
-        const { idProd, idCart } = req.params;
+        const { idCart, idProd } = req.params;
         const cart = await cartManager.getCartById(Number(idCart));
         const product = await productManager.getProductById(Number(idProd));
         if (cart && product) {
