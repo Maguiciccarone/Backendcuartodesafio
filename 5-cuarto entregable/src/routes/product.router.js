@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { ProductManager } from "../managers/product.manager.js";
 import { productValidator } from "../middlewares/productValidator.js";
+import socketServer from "../app.js";
 
 const router = Router();
 
@@ -34,6 +35,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", productValidator, async (req, res) => {
     try {
         const productCreated = await productManager.createProduct(req.body);
+        socketServer.emit("products", await store.getProducts());
         res.status(200).json(productCreated);
     } catch (error) {
         res.status(500).json(error.message);
@@ -59,6 +61,7 @@ router.delete("/:id", async (req, res) => {
         const { id } = req.params;
         const idNumber = Number(id);
         await productManager.deleteProduct(idNumber);
+        socketServer.emit("products", await store.getProducts());
         res.json({ message: `Product id: ${idNumber} deleted` });
     } catch (error) {
         res.status(500).json(error.message);
