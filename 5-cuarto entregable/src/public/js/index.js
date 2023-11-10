@@ -9,22 +9,34 @@ socketClient.on("saludoDesdeBack", (msg) => {
 socket.on("products", (data) => {
     const listProduct = document.getElementById("products");
     listProduct.innerHTML = " ";
-    data.forEach((p) => {
+    data.forEach((newProd) => {
         const items = `
         <div>
-          <h3>${p.title}</h3>
-          <p>$ ${p.price}</p>
-          <p>Categoría: ${p.category}</p>
+          <h3>${newProd.name}</h3>
+          <p>$ ${newProd.price}</p>
+          <p>Categoría: ${newProd.category}</p>
         </div>`;
         listProduct.innerHTML += items;
     });
 });
 
+form.onsubmit = (e) => {
+    e.preventDefault();
+    const name = inputName.value;
+    const price = inputPrice.value;
+    const category = inputCategory.value;
+    const product = { name, price, category };
+    socketClient.emit("addProduct", product);
+    inputName.value = ''
+    inputPrice.value = ''
+    inputCategory.value = ''
+};
+
 socket.on("productAdded", (newProd) => {
     const listProduct = document.getElementById("products");
     const newItem = `
       <div>
-        <h3>${newProd.title}</h3>
+        <h3>${newProd.name}</h3>
         <p>$ ${newProd.price}</p>
         <p>Categoría: ${newProd.category}</p>
       </div>`;
@@ -32,16 +44,7 @@ socket.on("productAdded", (newProd) => {
     listProduct.innerHTML = newItem + listProduct.innerHTML;
 });
 
-const SEND = (event) => {
-    event.preventDefault();
-    const form = document.getElementById('form');
-    const dataForm = new FormData(form);
-    const name = dataForm.get('name');
-    const price = dataForm.get('price');
-    const category = dataForm.get('category');
-    const newProduct = { name, price, category };
 
-    socket.emit("addProduct", newProduct);
-    console.log(newProduct);
-};
+
+
 

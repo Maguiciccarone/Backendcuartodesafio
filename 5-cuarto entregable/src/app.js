@@ -5,7 +5,11 @@ import { __dirname } from './utils.js';
 import productRouter from './routes/product.router.js';
 import cartRouter from './routes/cart.router.js';
 import viewsRouter from './routes/views.router.js';
+import { ProductManager } from './managers/product.manager.js';
+import path from 'path';
+import fs from 'fs';
 
+const productManager = new ProductManager("./src/data/products.json");
 
 const app = express();
 app.use(express.json());
@@ -19,7 +23,7 @@ app.use('/realtimeproducts', viewsRouter);
 app.use('/api/products', productRouter);
 app.use('/api/carts', cartRouter);
 
-const PORT = 8080;
+const PORT = 8089;
 const httpServer = app.listen(PORT, () => console.log(`Server ok on port ${PORT}`));
 
 const socketServer = new Server(httpServer);
@@ -30,7 +34,7 @@ socketServer.on("connection", async (socket) => {
     console.log(products)
     socket.emit("products", products);
 
-    socket.on("addProduct", (newProduct) => {
+    socket.on("addProduct", (newProd) => {
         const filePath = path.join(__dirname, 'data', 'products.json');
 
         fs.readFile(filePath, 'utf8', (err, data) => {
@@ -38,9 +42,8 @@ socketServer.on("connection", async (socket) => {
                 console.error("Error al leer el archivo 'products.json':", err);
                 return;
             }
-
             const products = JSON.parse(data);
-            products.push(newProduct);
+            products.push(newProd);
             const updatedData = JSON.stringify(products);
 
             fs.writeFile(filePath, updatedData, 'utf8', (err) => {
@@ -50,7 +53,7 @@ socketServer.on("connection", async (socket) => {
                 }
                 console.log("Nuevo producto agregado exitosamente");
             });
-            socketServer.emit("productAdded", newProduct);
+            socketServer.emit("productAdded", newProd);
         });
     });
 });
