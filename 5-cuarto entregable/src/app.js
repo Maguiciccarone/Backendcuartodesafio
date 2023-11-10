@@ -36,7 +36,7 @@ const socketServer = new Server(httpServer);
 
 socketServer.on("connection", async (socket) => {
     console.log("Nuevo Cliente conectado");
-    const products = await store.getProducts();
+    const products = await productManager.getProducts();
     console.log(products)
     socket.emit("products", products);
 
