@@ -15,18 +15,10 @@ app.engine('handlebars', handlebars.engine());
 app.set('views', __dirname + '/views');
 app.set('view engine', 'handlebars');
 app.use('/', viewsRouter);
+app.use('/realtimeproducts', viewsRouter);
 app.use('/api/products', productRouter);
 app.use('/api/carts', cartRouter);
 
-app.get('/', (req, res) => {
-    res.render('home')
-});
-
-app.post('/', (req, res) => {
-    const { msg } = req.body;
-    socketServer.emit('message', msg);
-    res.send('se envió el mensaje al socket del cliente')
-});
 const PORT = 8080;
 const httpServer = app.listen(PORT, () => console.log(`Server ok on port ${PORT}`));
 
