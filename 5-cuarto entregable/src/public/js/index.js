@@ -12,7 +12,7 @@ socket.on("products", (data) => {
     data.forEach((p) => {
         const items = `
         <div>
-          <h3>${p.name}</h3>
+          <h3>${p.title}</h3>
           <p>$ ${p.price}</p>
           <p>Categoría: ${p.category}</p>
         </div>`;
@@ -24,7 +24,7 @@ socket.on("productAdded", (newProd) => {
     const listProduct = document.getElementById("products");
     const newItem = `
       <div>
-        <h3>${newProd.name}</h3>
+        <h3>${newProd.title}</h3>
         <p>$ ${newProd.price}</p>
         <p>Categoría: ${newProd.category}</p>
       </div>`;
