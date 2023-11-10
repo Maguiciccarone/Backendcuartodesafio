@@ -19,14 +19,30 @@ app.use('/api/carts', cartRouter);
 
 app.get('/', (req, res) => {
     res.render('home')
-})
+});
+
+app.post('/', (req, res) => {
+    const { msg } = req.body;
+    socketServer.emit('message', msg);
+    res.send('se envió el mensaje al socket del cliente')
+});
 const PORT = 8080;
 const httpServer = app.listen(PORT, () => console.log(`Server ok on port ${PORT}`));
 
 const socketServer = new Server(httpServer);
 
+const products = [];
+
 socketServer.on('connection', (socket) => {
-    console.log(`usuario conectado ${socket.id}`);
+    console.log(`Usuario conectado ${socket.id}`);
     socket.on('disconnect', () => console.log('usuario desconectado'))
-    socket.emit('saludoDesdeBack', 'Bienvenido a Onashaga')
+
+    socket.emit('saludoDesdeBack', 'Bienvenido a Onashaga Expeditions')
+
+    socket.on('respuestaDesdeFront', (msg) => console.log(msg))
+
+    socket.on('newProduct', (product) => {
+        products.push(product)
+        socketServer.emit('arrayProducts', products)
+    })
 })
