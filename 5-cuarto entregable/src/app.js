@@ -5,8 +5,6 @@ import { __dirname } from './utils.js';
 import productRouter from './routes/product.router.js';
 import cartRouter from './routes/cart.router.js';
 import viewsRouter from './routes/views.router.js';
-import fs from 'fs';
-import path from 'path';
 
 
 const app = express();
