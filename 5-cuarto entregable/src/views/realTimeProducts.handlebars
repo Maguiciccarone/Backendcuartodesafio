@@ -1,33 +1,22 @@
- <h2>EXCURSIONES</h2>
+ <h2>PRODUCTOS</h2>
  
- <ul>
-        {{#each products}}
-        <li>Excursión: {{this.title}} <br>  - Precio: {{this.price}} <br> - Categoría: {{this.category}}<br> <hr></li>
-        {{/each}}
-    </ul>
-
-
 <div>
 <H2>AGREGAR EXCURSION</H2>
+<div>
+  <form id="form" onsubmit="SEND(event)">
+    <label for="title">EXCURSION:</label>
+    <input type="text" id="title" name="title" required /><br /> <br /> 
 
-<form id="form">
+    <label for="price">PRECIO:</label>
+    <input type="number" id="price" name="price" required /><br /> <br />
 
-<label for="name">EXCURSIÓN:</label>    
-<input type="text" name="name" id="name" required><br /><br />
+    <label for="category">CATEGORIA:</label>
+    <input type="text" id="category" name="category" required /><br /> <br />
 
-<label for="price">PRICE:</label>   
-<input type="number" name="price" id="price" required><br /><br />
-
-<label for="category">CATEGORY:</label>   
-<input type="text" name="category" id="category" required><br /><br />
-
- <input type="submit" value="ADD PRODUCT">
-
-</form>
-
+    <input type="submit" value="SEND" />
+  </form>
+  <div id="listProducts"></div>
 </div>
-
-<p id="products"></p>
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/index.js"></script>

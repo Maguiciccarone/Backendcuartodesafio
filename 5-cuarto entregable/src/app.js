@@ -6,10 +6,11 @@ import productRouter from './routes/product.router.js';
 import cartRouter from './routes/cart.router.js';
 import viewsRouter from './routes/views.router.js';
 import { ProductManager } from './managers/product.manager.js';
-import path from 'path';
 import fs from 'fs';
+import path from 'path';
 
 const productManager = new ProductManager("./src/data/products.json");
+
 
 const app = express();
 app.use(express.json());
@@ -34,7 +35,7 @@ socketServer.on("connection", async (socket) => {
     console.log(products)
     socket.emit("products", products);
 
-    socket.on("addProduct", (newProd) => {
+    socket.on("addProduct", (newProduct) => {
         const filePath = path.join(__dirname, 'data', 'products.json');
 
         fs.readFile(filePath, 'utf8', (err, data) => {
@@ -42,8 +43,9 @@ socketServer.on("connection", async (socket) => {
                 console.error("Error al leer el archivo 'products.json':", err);
                 return;
             }
+
             const products = JSON.parse(data);
-            products.push(newProd);
+            products.push(newProduct);
             const updatedData = JSON.stringify(products);
 
             fs.writeFile(filePath, updatedData, 'utf8', (err) => {
@@ -53,7 +55,7 @@ socketServer.on("connection", async (socket) => {
                 }
                 console.log("Nuevo producto agregado exitosamente");
             });
-            socketServer.emit("productAdded", newProd);
+            socketServer.emit("productAdded", newProduct);
         });
     });
 });

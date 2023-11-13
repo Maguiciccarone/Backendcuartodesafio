@@ -1,50 +1,43 @@
-const socketClient = io();
-
-socketClient.on("saludoDesdeBack", (msg) => {
-    console.log(msg);
-
-    socketClient.emit("respuestaDesdeFront", "Muchas gracias");
-});
+const socket = io();
 
 socket.on("products", (data) => {
-    const listProduct = document.getElementById("products");
+    const listProduct = document.getElementById("listProducts");
     listProduct.innerHTML = " ";
-    data.forEach((newProd) => {
+    data.forEach((element) => {
         const items = `
-        <div>
-          <h3>${newProd.name}</h3>
-          <p>$ ${newProd.price}</p>
-          <p>Categoría: ${newProd.category}</p>
-        </div>`;
+      <div>
+        <h3>${element.title}</h3>
+        <p>$ ${element.price}</p>
+        <p>${element.category}</p>
+      </div>`;
         listProduct.innerHTML += items;
     });
 });
 
-form.onsubmit = (e) => {
-    e.preventDefault();
-    const name = inputName.value;
-    const price = inputPrice.value;
-    const category = inputCategory.value;
-    const product = { name, price, category };
-    socketClient.emit("addProduct", product);
-    inputName.value = ''
-    inputPrice.value = ''
-    inputCategory.value = ''
-};
-
-socket.on("productAdded", (newProd) => {
-    const listProduct = document.getElementById("products");
+socket.on("productAdded", (newProduct) => {
+    const listProduct = document.getElementById("listProducts");
     const newItem = `
-      <div>
-        <h3>${newProd.name}</h3>
-        <p>$ ${newProd.price}</p>
-        <p>Categoría: ${newProd.category}</p>
-      </div>`;
+    <div>
+      <h3>${newProduct.title}</h3>
+      <p>$ ${newProduct.price}</p>
+      <p>${newProduct.category}</p>
+    </div>`;
 
     listProduct.innerHTML = newItem + listProduct.innerHTML;
 });
 
+const SEND = (event) => {
+    event.preventDefault();
+    const form = document.getElementById('form');
+    const dataForm = new FormData(form);
+    const title = dataForm.get('title');
+    const price = dataForm.get('price');
+    const category = dataForm.get('category');
+    const newProduct = { title, price, category };
 
+    socket.emit("addProduct", newProduct);
+    console.log(newProduct);
+};
 
 
 
