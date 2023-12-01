@@ -30,7 +30,7 @@ const httpServer = app.listen(PORT, () => console.log(`Server ok on port ${PORT}
 const socketServer = new Server(httpServer);
 
 socketServer.on("connection", async (socket) => {
-    console.log("Nuevo Cliente conectado");
+    console.log('Nuevo Cliente conectado', socket.id);
     const products = await productManager.getProducts();
     console.log(products)
     socket.emit("products", products);
