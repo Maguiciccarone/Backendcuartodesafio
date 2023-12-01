@@ -1,0 +1,22 @@
+ <h2>PRODUCTOS</h2>
+ 
+<div>
+<H2>AGREGAR EXCURSION</H2>
+<div>
+  <form id="form" onsubmit="SEND(event)">
+    <label for="title">EXCURSION:</label>
+    <input type="text" id="title" name="title" required /><br /> <br /> 
+
+    <label for="price">PRECIO:</label>
+    <input type="number" id="price" name="price" required /><br /> <br />
+
+    <label for="category">CATEGORIA:</label>
+    <input type="text" id="category" name="category" required /><br /> <br />
+
+    <input type="submit" value="SEND" />
+  </form>
+  <div id="listProducts"></div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
