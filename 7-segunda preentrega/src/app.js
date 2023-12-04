@@ -6,27 +6,29 @@ import productRouter from './routes/product.router.js';
 import cartRouter from './routes/cart.router.js';
 import viewsRouter from './routes/views.router.js';
 import { ProductManager } from './managers/product.manager.js';
+import './db/connection.js';
 import fs from 'fs';
 import path from 'path';
 
-const productManager = new ProductManager("./src/data/products.json");
-
-
 const app = express();
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
-app.engine('handlebars', handlebars.engine());
-app.set('views', __dirname + '/views');
-app.set('view engine', 'handlebars');
-app.use('/', viewsRouter);
-app.use('/realtimeproducts', viewsRouter);
+
 app.use('/api/products', productRouter);
 app.use('/api/carts', cartRouter);
 
-const PORT = 8089;
-const httpServer = app.listen(PORT, () => console.log(`Server ok on port ${PORT}`));
+app.engine('handlebars', handlebars.engine());
+app.set('views', __dirname + '/views');
+app.set('view engine', 'handlebars');
 
+app.use('/', viewsRouter);
+app.use('/realtimeproducts', viewsRouter);
+
+
+const PORT = 8080;
+const httpServer = app.listen(PORT, () => console.log(`Server ok on port ${PORT}`));
 const socketServer = new Server(httpServer);
 
 socketServer.on("connection", async (socket) => {
