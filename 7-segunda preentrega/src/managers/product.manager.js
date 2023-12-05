@@ -2,9 +2,7 @@
 import { ProductModel } from "../models/product.model.js";
 
 export default class ProductManager {
-    //constructor( collection, schema) {
-    //    this.collection = model(collection, schema);
-    //};
+
 
     async getAll(page = 1, limit = 10, sortOrder = 'desc', query = null) {
         try {

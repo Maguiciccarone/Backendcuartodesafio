@@ -13,11 +13,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
-// Rutas del cart y de prodcts
 app.use('/api/products', productRouter);
 app.use('/api/carts', cartRouter);
 
-//Configuración de handlebars
 app.engine('handlebars', handlebars.engine());
 app.set('views', __dirname + '/views');
 app.set('view engine', 'handlebars');
@@ -28,7 +26,7 @@ const PORT = 8080;
 const httpServer = app.listen(PORT, () => console.log(`Server ok on port ${PORT}`));
 const socketServer = new Server(httpServer);
 
-//const products = [];
+
 
 socketServer.on('connection', (socket) => {
     console.log(`Usuario conectado ${socket.id}`);

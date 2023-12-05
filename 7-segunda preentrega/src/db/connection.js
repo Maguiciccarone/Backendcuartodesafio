@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 // const MONGOATLAS = "mongodb+srv://admin:05SoLCqlJ92foihJ@ciccarone.0jpo6y7.mongodb.net/?retryWrites=true&w=majority"
 
-const MONGOCOMPASS = "mongodb://127.0.0.1:27017/ecommerce";
+const MONGOCOMPASS = "mongodb://127.0.0.1:27017/coderhouse47345";
 
 export const initMongoDB = async () => {
     try {
