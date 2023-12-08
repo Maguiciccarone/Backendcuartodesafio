@@ -37,9 +37,7 @@ export default class CartDaoMongoDB {
 
     async addProdToCart(cart, prodId) {
         try {
-            // const cart = await CartModel.findById(cartId);
-            // //   console.log(cart);
-            // if (!cart) return false;
+
             cart.products.push({ product: prodId });
             cart.save();
             return cart;
