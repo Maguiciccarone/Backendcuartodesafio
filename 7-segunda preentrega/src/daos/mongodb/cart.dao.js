@@ -11,7 +11,7 @@ export default class CartDaoMongoDB {
         }
     }
 
-    async getAll() {
+    async getAll(page = 1, limit = 10) {
         try {
             return await CartModel.find({});
         } catch (error) {
