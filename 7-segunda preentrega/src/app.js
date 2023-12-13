@@ -1,9 +1,12 @@
-import './db/connection.js';
+
 import express from 'express';
 import productRouter from './routes/product.router.js';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
+import './db/connection.js';
+import { MONGOCOMPASS } from "./db/connection.js";
+import { __dirname } from './utils.js';
 import handlebars from 'express-handlebars';
 import viewsRouter from './routes/views.router.js';
 import userRouter from './routes/user.router.js';
@@ -14,7 +17,7 @@ const app = express();
 
 const mongoStoreOptions = {
     store: MongoStore.create({
-        mongoUrl: connectionString,
+        mongoUrl: MONGOCOMPASS,
         ttl: 120,
         crypto: {
             secret: '1234'
