@@ -1,7 +1,5 @@
 import { Router } from "express";
 import UserController from "../controllers/user.controllers.js";
-const controller = new UserController();
-const router = Router();
 import {
     login,
     logout,
@@ -9,6 +7,12 @@ import {
     infoSession,
 } from "../controllers/user.controllers.js";
 import { validateLogIn } from "../middlewares/middlewares.js";
+
+const controller = new UserController();
+
+const router = Router();
+
+
 
 router.post("/register", controller.register);
 

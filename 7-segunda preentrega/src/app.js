@@ -1,16 +1,16 @@
 
 import express from 'express';
-import productRouter from './routes/product.router.js';
+// import productRouter from './routes/product.router.js';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
+import { __dirname } from './utils.js';
 import MongoStore from 'connect-mongo';
+import userRouter from './routes/user.router.js';
+import viewsRouter from './routes/views.router.js';
 import './db/connection.js';
 import { MONGOATLAS } from "./db/connection.js";
-import { __dirname } from './utils.js';
 import handlebars from 'express-handlebars';
-import viewsRouter from './routes/views.router.js';
-import userRouter from './routes/user.router.js';
-import cartRouter from './routes/cart.router.js';
+// import cartRouter from './routes/cart.router.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 
 const app = express();
@@ -42,8 +42,8 @@ app.set('view engine', 'handlebars');
 app.use(session(mongoStoreOptions));
 
 
-app.use('/products', productRouter);
-app.use('/carts', cartRouter);
+// app.use('/products', productRouter);
+// app.use('/carts', cartRouter);
 app.use('/users', userRouter);
 app.use('/views', viewsRouter);
 

@@ -1,4 +1,4 @@
-import { UserModel } from "../models/user.model.js";
+import { UserModel } from '../models/user.model.js';
 
 export default class UserServices {
     async findByEmail(email) {
@@ -32,4 +32,4 @@ export default class UserServices {
             console.log(error);
         }
     }
-} 
+}

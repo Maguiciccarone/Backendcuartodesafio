@@ -29,19 +29,6 @@ export default class UserController {
     }
 }
 
-// const users = [
-//   {
-//     username:"juan",
-//     password:"1234",
-//     admin: true,
-//   },
-//   {
-//     username:"jose",
-//     password:"123456",
-//     admin: false,
-//   }
-// ];
-
 export const login = (req, res) => {
     const { username, password } = req.body;
     const index = users.findIndex(
